@@ -1,8 +1,16 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
-import 'package:portfolio_abimael/app/ui/ui.dart';
+
+import '../../../config_app.dart';
+import '../../../controllers/controllers.dart';
+
+import '../../ui.dart';
 
 class SideBar extends StatelessWidget {
-  const SideBar({super.key});
+  const SideBar({super.key, required this.controller});
+
+  final HomeController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -51,44 +59,22 @@ class SideBar extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          SizedBox(
-                            width: 60,
-                            child: ProContainer(
-                              backgroundColor: ProColors.graySoft,
-                              height: 60,
-                              child: const Icon(
-                                Icons.place,
-                              ),
+                          _sideMenuHorizontallOption(
+                            icon: ProIcons.github,
+                            onTap: () => controller.openUrl(
+                              ConfigApp.gitUrl,
                             ),
                           ),
-                          SizedBox(
-                            width: 60,
-                            child: ProContainer(
-                              backgroundColor: ProColors.graySoft,
-                              height: 60,
-                              child: const Icon(
-                                Icons.account_box_rounded,
-                              ),
+                          _sideMenuHorizontallOption(
+                            icon: ProIcons.linkedin,
+                            onTap: () => controller.openUrl(
+                              ConfigApp.linkedinUrl,
                             ),
                           ),
-                          SizedBox(
-                            width: 60,
-                            child: ProContainer(
-                              backgroundColor: ProColors.graySoft,
-                              height: 60,
-                              child: const Icon(
-                                Icons.admin_panel_settings_sharp,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 60,
-                            child: ProContainer(
-                              backgroundColor: ProColors.graySoft,
-                              height: 60,
-                              child: const Icon(
-                                Icons.airplanemode_active,
-                              ),
+                          _sideMenuHorizontallOption(
+                            icon: ProIcons.whatsapp,
+                            onTap: () => controller.openUrl(
+                              ConfigApp.whatsappUrl,
                             ),
                           ),
                         ],
@@ -101,17 +87,17 @@ class SideBar extends StatelessWidget {
                         padding: const EdgeInsets.all(ProSpaces.proSpaces30),
                         child: Column(
                           children: [
-                            _menuTileOption(
+                            _sideMenuVerticalOption(
                               icon: Icons.phone_android,
                               title: 'Phone',
                               subTitle: '+55 73-99958.6629',
                             ),
-                            _menuTileOption(
+                            _sideMenuVerticalOption(
                               icon: Icons.mail,
                               title: 'Email',
                               subTitle: 'abimael.rza@gmail.com',
                             ),
-                            _menuTileOption(
+                            _sideMenuVerticalOption(
                               icon: Icons.place_rounded,
                               title: 'Endereço',
                               subTitle: 'Gandu-Ba, Brasil',
@@ -133,7 +119,7 @@ class SideBar extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(16),
                 child: Image.network(
-                  'https://media.licdn.com/dms/image/D4D03AQGgXuTqj-WbXQ/profile-displayphoto-shrink_800_800/0/1693089649934?e=1698278400&v=beta&t=0uoKKaA6YCbEkMfRyNvZD6tHXdSvUL4StiHYtTKPPtE',
+                  ConfigApp.coverPhoto,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -144,7 +130,26 @@ class SideBar extends StatelessWidget {
     );
   }
 
-  Widget _menuTileOption({
+  Widget _sideMenuHorizontallOption({
+    required IconData? icon,
+    required Function()? onTap,
+  }) {
+    return GestureDetector(
+      child: SizedBox(
+        width: 60,
+        child: ProContainer(
+          backgroundColor: ProColors.graySoft,
+          height: 60,
+          child: Icon(
+            icon,
+          ),
+        ),
+      ),
+      onTap: onTap,
+    );
+  }
+
+  Widget _sideMenuVerticalOption({
     required IconData? icon,
     required String title,
     required String subTitle,

@@ -22,9 +22,9 @@ class HomeTemplate extends GetView<HomeController> {
         backgroundColor: ProColors.graySoft,
         drawerEnableOpenDragGesture: true,
         drawer: isMobile
-            ? const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: SideBar(),
+            ? Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SideBar(controller: controller),
               )
             : null,
         body: Padding(
@@ -43,7 +43,10 @@ class HomeTemplate extends GetView<HomeController> {
                       iconColor: ProColors.orangeMedium,
                       onPressed: () => _key.currentState!.openDrawer(),
                     ),
-                  if (!isMobile) const SideBar(),
+                  if (!isMobile)
+                    SideBar(
+                      controller: controller,
+                    ),
                   Expanded(
                     child: Column(
                       children: [

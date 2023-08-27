@@ -6,3 +6,4 @@ export 'font-sizes/font_sizes.dart';
 export 'text-styles/text_styles.dart';
 export 'templates/templates.dart';
 export 'molecules/molecules.dart';
+export 'icons/icons.dart';

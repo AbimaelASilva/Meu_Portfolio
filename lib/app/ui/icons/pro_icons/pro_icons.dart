@@ -1,0 +1,1 @@
+export 'pro_icons_fonts.dart';
