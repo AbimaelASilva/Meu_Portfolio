@@ -1,11 +1,11 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:portfolio_abimael/app/ui/templates/home/home_components/profile_informations.dart';
 
-import '../../../config_app.dart';
-import '../../../controllers/controllers.dart';
-
-import '../../ui.dart';
+import '../../../../config_app.dart';
+import '../../../../controllers/controllers.dart';
+import '../../../ui.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({super.key, required this.controller});
@@ -33,29 +33,10 @@ class SideBar extends StatelessWidget {
                 child: ListView(
                   shrinkWrap: true,
                   children: [
-                    Text(
-                      'Abimael Andrade',
-                      style: ProTextStyles.bold28,
-                      textAlign: TextAlign.center,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: ProSpaces.proSpaces8,
-                      ),
-                      child: Text(
-                        'Mobile/Web Apps Developer ',
-                        style: ProTextStyles.medium12.copyWith(
-                            fontSize: ProFontSizes.size16,
-                            color: ProColors.grayMedium),
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                         vertical: ProSpaces.proSpaces22,
-                      ),
+                      ).copyWith(top: 90),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -111,20 +92,7 @@ class SideBar extends StatelessWidget {
               ),
             ),
           ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: SizedBox(
-              height: 200,
-              width: 200,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Image.network(
-                  ConfigApp.coverPhoto,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
+          const ConverPhoto(),
         ],
       ),
     );
@@ -134,7 +102,7 @@ class SideBar extends StatelessWidget {
     required IconData? icon,
     required Function()? onTap,
   }) {
-    return GestureDetector(
+    return InkWell(
       child: SizedBox(
         width: 60,
         child: ProContainer(
@@ -142,6 +110,7 @@ class SideBar extends StatelessWidget {
           height: 60,
           child: Icon(
             icon,
+            color: ProColors.orangeMedium,
           ),
         ),
       ),

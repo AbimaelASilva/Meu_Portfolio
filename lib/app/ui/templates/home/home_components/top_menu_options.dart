@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../controllers/controllers.dart';
-import '../../ui.dart';
+import '../../../../controllers/controllers.dart';
+import '../../../ui.dart';
 
 class TopMenuOptions extends StatelessWidget {
   const TopMenuOptions({

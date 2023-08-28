@@ -36,60 +36,55 @@ class AboutMeTemplate extends StatelessWidget {
           textAlign: TextAlign.start,
           overflow: TextOverflow.ellipsis,
         ),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: ProSpaces.proSpaces8,
-          ),
-          child: ProContainer(
-              // height: 170,
-              backgroundColor: ProColors.graySoft,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: ProSpaces.proSpaces24,
-                  vertical: ProSpaces.proSpaces10,
-                ),
-                child: ListView(
-                  shrinkWrap: true,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.app_settings_alt_sharp,
-                          color: ProColors.orangeMedium,
-                          size: 24,
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: ProSpaces.proSpaces10,
-                            ),
-                            child: Text(
-                              'label_app_development'.tr,
-                              style: ProTextStyles.bold22,
-                              textAlign: TextAlign.start,
-                              //  overflow: TextOverflow.ellipsis,
-                            ),
+        ProContainer(
+            // height: 170,
+            backgroundColor: ProColors.graySoft,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: ProSpaces.proSpaces24,
+                vertical: ProSpaces.proSpaces10,
+              ),
+              child: ListView(
+                shrinkWrap: true,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.app_settings_alt_sharp,
+                        color: ProColors.orangeMedium,
+                        size: 24,
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: ProSpaces.proSpaces10,
+                          ),
+                          child: Text(
+                            'label_app_development'.tr,
+                            style: ProTextStyles.bold22,
+                            textAlign: TextAlign.start,
+                            //  overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                      ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: ProSpaces.proSpaces8,
-                        bottom: ProSpaces.proSpaces16,
                       ),
-                      child: Text(
-                        'message_app_development'.tr,
-                        style: ProTextStyles.regular14,
-                        textAlign: TextAlign.justify,
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: ProSpaces.proSpaces8,
+                      bottom: ProSpaces.proSpaces16,
+                    ),
+                    child: Text(
+                      'message_app_development'.tr,
+                      style: ProTextStyles.regular14,
+                      textAlign: TextAlign.justify,
 
-                        //  overflow: TextOverflow.ellipsis,
-                      ),
+                      //  overflow: TextOverflow.ellipsis,
                     ),
-                  ],
-                ),
-              )),
-        ),
+                  ),
+                ],
+              ),
+            )),
       ],
     );
 

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../controllers/controllers.dart';
-import 'side_bar.dart';
-import 'top_menu_options.dart';
 
 import '../../ui.dart';
 
@@ -50,6 +48,12 @@ class HomeTemplate extends GetView<HomeController> {
                   Expanded(
                     child: Column(
                       children: [
+                        if (isMobile)
+                          const Padding(
+                            padding:
+                                EdgeInsets.only(bottom: ProSpaces.proSpaces20),
+                            child: ConverPhoto(),
+                          ),
                         Container(
                           padding: const EdgeInsets.only(
                             left: 20,

@@ -16,6 +16,7 @@ class PortfolioApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Portfólio Abimael',
       locale: Get.deviceLocale,
       fallbackLocale: const Locale('en', 'US'),
