@@ -26,8 +26,6 @@ class AboutMeTemplate extends StatelessWidget {
             'message_about_me'.tr,
             style: ProTextStyles.regular16,
             textAlign: TextAlign.justify,
-
-            //  overflow: TextOverflow.ellipsis,
           ),
         ),
         Text(
@@ -49,7 +47,7 @@ class AboutMeTemplate extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.app_settings_alt_sharp,
                         color: ProColors.orangeMedium,
                         size: 24,

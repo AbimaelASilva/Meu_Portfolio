@@ -17,6 +17,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   url_launcher: ^6.1.12
+  dio: ^5.3.2
+  carousel_slider: ^4.2.1
+  shimmer: ^2.0.0
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -30,11 +34,15 @@ flutter:
 
   uses-material-design: true
 
+  assets:
+    - lib/app/data/projects-data/data_json.json
+    
+
  
   fonts:
     - family: ProIcons
       fonts:
-        - asset: lib/app/ui/icons/pro_icons/fonts/pro_icons.ttf
+        - asset: lib/app/ui/atoms/icons/pro_icons/fonts/pro_icons.ttf
     
   
 

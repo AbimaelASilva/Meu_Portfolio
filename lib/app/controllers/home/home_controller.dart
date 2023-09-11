@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:portfolio_abimael/app/helpers/openUrl.dart';
 
 class HomeController extends GetxController {
   final _pageController = PageController().obs;
@@ -22,9 +22,6 @@ class HomeController extends GetxController {
   }
 
   Future<void> openUrl(String param) async {
-    final Uri url = Uri.parse(param);
-    if (!await launchUrl(url,)) {
-      throw Exception('Could not launch $url');
-    }
+    openUrlHelper(param);
   }
 }

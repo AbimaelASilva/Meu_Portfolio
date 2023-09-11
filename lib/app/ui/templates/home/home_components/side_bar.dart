@@ -1,7 +1,6 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
-import 'package:portfolio_abimael/app/ui/templates/home/home_components/profile_informations.dart';
 
 import '../../../../config_app.dart';
 import '../../../../controllers/controllers.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../colors/colors.dart';
+import '../../atoms/colors/colors.dart';
 
 class ProIconButton extends StatelessWidget {
   const ProIconButton({

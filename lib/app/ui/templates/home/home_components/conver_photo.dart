@@ -12,16 +12,8 @@ class ConverPhoto extends StatelessWidget {
       alignment: Alignment.topCenter,
       child: Column(
         children: [
-          SizedBox(
-            height: 200,
-            width: 200,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(16),
-              child: Image.network(
-                ConfigApp.coverPhoto,
-                fit: BoxFit.cover,
-              ),
-            ),
+          ProImageNetwork(
+            urlImage: ConfigApp.coverPhoto,
           ),
           const Padding(
             padding: EdgeInsets.only(top: ProSpaces.proSpaces20),

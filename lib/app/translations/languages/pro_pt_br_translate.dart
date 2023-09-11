@@ -12,4 +12,7 @@ final Map<String, String> ptBrTranslate = {
   "label_app_development": "Desenvolvimento de aplicativos",
   "message_app_development":
       "Com foco no design centrado no usuário etecnologias de ponta, eu prospero construindo aplicativos intuitivos e eficientes que tenham um impacto positivo na vida das pessoas vidas. Vamos transformar ideias em realidade e moldar o futuro juntos.",
+  "label_what_ive_already_done": "O que eu já fiz!",
+  "label_ops": 'Ops!',
+  "message_error_request": 'Falha ao fazer a requisição!',
 };

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../radius/pro_radius.dart';
-import '../colors/pro_colors.dart';
+import '../atoms/radius/pro_radius.dart';
+import '../atoms/colors/pro_colors.dart';
 
 class ProContainer extends StatelessWidget {
   const ProContainer({
@@ -12,6 +12,7 @@ class ProContainer extends StatelessWidget {
     this.paddingAllChild = 0,
     this.height,
     this.elevation = 0,
+    this.constraints,
     super.key,
   });
 
@@ -24,13 +25,16 @@ class ProContainer extends StatelessWidget {
   final double? height;
   final double paddingAllChild;
   final double elevation;
+  final BoxConstraints? constraints;
 
   @override
   Widget build(BuildContext context) {
     return Material(
+      
         elevation: elevation,
         borderRadius: borderRadius,
         child: Container(
+          constraints: constraints,
           height: height,
           decoration: BoxDecoration(
             color: backgroundColor ?? ProColors.white,

@@ -1,0 +1,89 @@
+[
+  {
+    "projectName": "Oficina FTC 2023",
+    "urlSufix": "oficina_ftc_2023",
+    "fileImage": [
+      "home.png",
+      "player_1.png",
+      "player_2.png"
+    ]
+  },
+  {
+    "projectName": "Preço Bom",
+    "urlSufix": "preco_bom",
+    "fileImage": [
+      "home.png",
+      "perfil.png",
+      "categorias.png",
+      "detalhe_produto.png",
+      "lista_estabelecimento.png"
+    ]
+  },
+  {
+    "projectName": "Cadê meu Pet",
+    "urlSufix": "cade_meu_pet",
+    "fileImage": [
+      "login.png",
+      "home.png",  
+      "para_adocao.png",
+      "parceiros.png",
+      "perfil_pet.png",
+      "procurados.png",
+      "cadasdtro_pet.png",
+      "cadastro_usuario.png"
+    ]
+  },
+  {
+    "projectName": "Força de Venda",
+    "urlSufix": "forca_venda",
+    "fileImage": [
+      "home.png",
+      "impressao.png",
+      "login.png",
+      "pdv.png",
+      "print_view.png",
+      "produtos_add.png",
+      "relatorio_vendas.png",
+      "relação_vendas.png",
+      "resumo_pdv.png",
+      "detalhes_venda.png"
+    ]
+  },
+  {
+    "projectName": "Oficina FTC 2022",
+    "urlSufix": "oficina_ftc_2022",
+    "fileImage": [
+      "perfil.png"
+    ]
+  },
+ 
+  {
+    "projectName": "Sport",
+    "urlSufix": "sport",
+    "fileImage": [
+      "home.png",
+      "login.png",
+      "ordem_chegada.png",
+      "perfil.png",
+      "quant_equipe.png",
+      "sorteada.png",
+      "edit.png"
+    ]
+  },
+  {
+    "projectName": "ToDo",
+    "urlSufix": "todo",
+    "fileImage": [
+      "todo.png"
+    ]
+  },
+  {
+    "projectName": "Way Web",
+    "urlSufix": "way_web",
+    "fileImage": [
+      "home.jpg",
+      "cadastro_produto.jpg"
+
+    ]
+  }
+]

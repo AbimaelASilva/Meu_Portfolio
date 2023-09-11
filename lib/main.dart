@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'app/bindings/home_binding.dart';
+import 'app/bindings/bindings.dart';
+
 import 'app/translations/pro_translations.dart';
 
-import 'app/ui/templates/home/home.dart';
+import 'app/ui/templates/templates.dart';
 
 void main() {
   runApp(const PortfolioApp());

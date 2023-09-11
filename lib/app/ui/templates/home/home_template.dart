@@ -14,19 +14,31 @@ class HomeTemplate extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       final isMobile = constraints.maxWidth < 980;
+
       final width = constraints.maxWidth;
+
+      const paddingMoobile = 16.0;
+
+      final paddingDesktop = width > 1380 ? width * 0.20 : width * 0.05;
+
       return Scaffold(
         key: _key,
         backgroundColor: ProColors.graySoft,
         drawerEnableOpenDragGesture: true,
         drawer: isMobile
             ? Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: SideBar(controller: controller),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                ),
+                child: SideBar(
+                  controller: controller,
+                ),
               )
             : null,
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: 50),
+          padding: EdgeInsets.symmetric(
+              horizontal: isMobile ? paddingMoobile : paddingDesktop,
+              vertical: 50),
           child: ListView(
             shrinkWrap: true,
             children: [
@@ -62,10 +74,10 @@ class HomeTemplate extends GetView<HomeController> {
                           child: TopMenuOptions(controller: controller),
                         ),
                         LimitedBox(
-                          maxWidth: MediaQuery.sizeOf(context).width * 0.4,
+                          maxWidth: width * 0.4,
                           child: Padding(
                             padding: const EdgeInsets.only(top: 10),
-                            child: _musicListWidget(context),
+                            child: _pageViewList(context, isMobile),
                           ),
                         )
                       ],
@@ -80,7 +92,7 @@ class HomeTemplate extends GetView<HomeController> {
     });
   }
 
-  Widget _musicListWidget(BuildContext context) {
+  Widget _pageViewList(BuildContext context, bool isMobile) {
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: ProContainer(
@@ -88,14 +100,14 @@ class HomeTemplate extends GetView<HomeController> {
         backgroundColor: ProColors.white,
         child: Padding(
           padding: EdgeInsets.all(
-            MediaQuery.sizeOf(context).width * 0.05,
+            MediaQuery.sizeOf(context).width * 0.02,
           ).copyWith(top: ProSpaces.proSpaces20),
           child: Obx(
             () => PageView.builder(
               controller: controller.pageController,
-              itemCount: pagesList.length,
+              itemCount: _pagesList(isMobile).length,
               itemBuilder: (context, index) {
-                final page = pagesList[index];
+                final page = _pagesList(isMobile)[index];
                 return page;
               },
               onPageChanged: (index) {
@@ -108,8 +120,8 @@ class HomeTemplate extends GetView<HomeController> {
     );
   }
 
-  List<Widget> get pagesList => [
+  List<Widget> _pagesList(bool iMobile) => [
+        WorkTemplate(isMobile: iMobile),
         const AboutMeTemplate(),
-        const WorkTemplate(),
       ];
 }
