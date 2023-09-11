@@ -90,14 +90,15 @@ class WorkTemplate extends GetView<WorkController> {
                                     child: ClipRRect(
                                       borderRadius: const BorderRadius.all(
                                           Radius.circular(16)),
-                                      child: ProImageNetworkWeb(
-                                        height: height,
-                                        width: width,
-                                        imageUrl: urlImage,
+                                      child: IgnorePointer(
+                                        child: ProImageNetworkWeb(
+                                          height: height,
+                                          width: width,
+                                          imageUrl: urlImage,
+                                        ),
                                       ),
                                     ),
                                     onTap: () {
-                                      print('clicou');
                                       _showAlertDialog(context, urlImage);
                                     },
                                   );
