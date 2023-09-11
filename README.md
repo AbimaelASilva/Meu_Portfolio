@@ -1,16 +1,9 @@
-# portfolio_abimael
+Este é o reposítório do código base do Meu portfólio desenvolvido todo em flutter.
 
-A new Flutter project.
+Para acessar o AppWeb acesse AQUI!
+https://abimaelasilva.github.io/build_release_portfolio/#/
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+Consta lá informações de trabalhos, projetos e links para meus demais respositórios no GitHub.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![portfolio_image](https://github.com/AbimaelASilva/Meu_Portfolio/assets/18286517/548e3770-7be7-4477-bf28-5e2d6cf346a8)
