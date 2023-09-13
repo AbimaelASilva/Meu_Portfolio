@@ -1,6 +1,9 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_abimael/app/config_app.dart';
+import 'package:portfolio_abimael/app/data/data.dart';
 
 import '../../../controllers/controllers.dart';
 
@@ -87,19 +90,19 @@ class WorkTemplate extends GetView<WorkController> {
                                   final urlImage =
                                       "${ConfigApp.storgeUrlPrefix}${project.urlSufix}/$sufixUrlImage";
                                   return InkWell(
-                                    child: ClipRRect(
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(16)),
-                                      child: IgnorePointer(
-                                        child: ProImageNetworkWeb(
-                                          height: height,
-                                          width: width,
-                                          imageUrl: urlImage,
-                                        ),
+                                    child: IgnorePointer(
+                                      child: ProImageNetworkWeb(
+                                        height: height,
+                                        width: width,
+                                        imageUrl: urlImage,
                                       ),
                                     ),
                                     onTap: () {
-                                      _showAlertDialog(context, urlImage);
+                                      _zoomImage(
+                                        context,
+                                        urlImage,
+                                        project,
+                                      );
                                     },
                                   );
                                 }).toList(),
@@ -117,32 +120,40 @@ class WorkTemplate extends GetView<WorkController> {
         });
   }
 
-  void _showAlertDialog(BuildContext context, urlImage) {
-    // set up the buttons
-    Widget cancelButton = TextButton(
-      child: Text("Cancel"),
-      onPressed: () {},
-    );
-    Widget continueButton = TextButton(
-      child: Text("Continue"),
-      onPressed: () {},
+  void _zoomImage(BuildContext context, urlImage, ProjectModel project) {
+    final closeButton = TextButton(
+      child: Text(
+        'label_close'.tr,
+        style: ProTextStyles.regular12,
+      ),
+      onPressed: Get.back,
     );
 
-    // set up the AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text("AlertDialog"),
-      content: ProImageNetworkWeb(
-        height: 500,
-        width: 300,
-        imageUrl: urlImage,
+    final height = MediaQuery.sizeOf(context).height * 0.7;
+    final width = MediaQuery.sizeOf(context).height * 0.4;
+    final alert = AlertDialog(
+      title: Text(project.projectName),
+      content: SizedBox(
+        height: height,
+        width: width,
+        child: ProCarousel(
+          height: MediaQuery.sizeOf(context).height * 0.7,
+          items: project.fileImage.map((sufixUrlImage) {
+            final urlImage =
+                "${ConfigApp.storgeUrlPrefix}${project.urlSufix}/$sufixUrlImage";
+            return ProImageNetworkWeb(
+              height: height,
+              width: width,
+              imageUrl: urlImage,
+            );
+          }).toList(),
+        ),
       ),
       actions: [
-        cancelButton,
-        continueButton,
+        closeButton,
       ],
     );
 
-    // show the dialog
     showDialog(
       context: context,
       builder: (BuildContext context) {

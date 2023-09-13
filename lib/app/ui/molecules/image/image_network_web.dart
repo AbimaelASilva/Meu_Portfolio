@@ -2,6 +2,8 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+import 'package:portfolio_abimael/app/ui/atoms/atoms.dart';
+
 class ProImageNetworkWeb extends StatelessWidget {
   const ProImageNetworkWeb({
     super.key,
@@ -22,11 +24,18 @@ class ProImageNetworkWeb extends StatelessWidget {
       imageUrl,
       (int _) => ImageElement()..src = imageUrl,
     );
-    return SizedBox(
-      width: width,
-      height: height,
-      child: HtmlElementView(
-        viewType: imageUrl,
+    return ClipRRect(
+      borderRadius: const BorderRadius.all(
+        Radius.circular(
+          ProSpaces.proSpaces16,
+        ),
+      ),
+      child: SizedBox(
+        width: width,
+        height: height,
+        child: HtmlElementView(
+          viewType: imageUrl,
+        ),
       ),
     );
   }

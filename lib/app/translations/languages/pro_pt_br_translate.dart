@@ -15,4 +15,5 @@ final Map<String, String> ptBrTranslate = {
   "label_what_ive_already_done": "O que eu já fiz!",
   "label_ops": 'Ops!',
   "message_error_request": 'Falha ao fazer a requisição!',
+  "label_close": 'Fechar',
 };
