@@ -32,7 +32,7 @@ class ProBannerHorizontal extends StatelessWidget {
   final Function(BannerModel)? onPressedDeleteImage;
   final bool autoPlay;
   final bool canEditImage;
-  final BorderRadius? borderRadius;
+  final BorderRadiusGeometry borderRadius;
   final Widget Function({
     required BannerModel banner,
     required BuildContext context,

@@ -1,7 +1,22 @@
 [
   {
+    "projectName": "Tedera LLC",
+    "urlSufix": "tedera",
+    "isMobileProject": false,
+    "urlDemo": "https://abimaelasilva.github.io/tedera/#/",
+    "urlGit": "https://github.com/AbimaelASilva/tedera",
+    "fileImage": [
+      "tedera_1.jpg",
+      "tedera_1.jpg"
+
+    ]
+  },
+  {
+    
     "projectName": "Oficina FTC 2023",
     "urlSufix": "oficina_ftc_2023",
+    "isMobileProject": true,
+    "urlGit": "https://github.com/AbimaelASilva/oficina_unex_2023",
     "fileImage": [
       "home.png",
       "player_1.png",
@@ -11,6 +26,8 @@
   {
     "projectName": "Preço Bom",
     "urlSufix": "preco_bom",
+    "isMobileProject": true,
+    "urlGit": "",
     "fileImage": [
       "home.png",
       "perfil.png",
@@ -22,6 +39,8 @@
   {
     "projectName": "Cadê meu Pet",
     "urlSufix": "cade_meu_pet",
+    "isMobileProject": true,
+    "urlGit": "https://github.com/AbimaelASilva/cade_meu_pet",
     "fileImage": [
       "login.png",
       "home.png",  
@@ -36,6 +55,8 @@
   {
     "projectName": "Força de Venda",
     "urlSufix": "forca_venda",
+    "isMobileProject": true,
+    "urlGit": "",
     "fileImage": [
       "home.png",
       "impressao.png",
@@ -52,6 +73,8 @@
   {
     "projectName": "Oficina FTC 2022",
     "urlSufix": "oficina_ftc_2022",
+    "isMobileProject": true,
+    "urlGit": "",
     "fileImage": [
       "perfil.png"
     ]
@@ -60,6 +83,8 @@
   {
     "projectName": "Sport",
     "urlSufix": "sport",
+    "isMobileProject": true,
+    "urlGit": "",
     "fileImage": [
       "home.png",
       "login.png",
@@ -73,6 +98,8 @@
   {
     "projectName": "ToDo",
     "urlSufix": "todo",
+    "isMobileProject": true,
+    "urlGit": "https://github.com/AbimaelASilva/todo",
     "fileImage": [
       "todo.png"
     ]
@@ -80,10 +107,12 @@
   {
     "projectName": "Way Web",
     "urlSufix": "way_web",
+    "isMobileProject": false,
+    "urlGit": "https://github.com/AbimaelASilva/waychef-joao",
     "fileImage": [
       "home.jpg",
       "cadastro_produto.jpg"
 
     ]
-  }
+  }  
 ]

@@ -29,6 +29,9 @@ class WorkController extends GetxController {
   Future<void> _getMyPublicGitRepositories() async {
     try {
       _gitRepoList.value = await _workProvider.getMyPublicGitRepositories();
+      for (GitResponseModel git in gitRepoList) {
+        print('${git.fullName} = ${git.htmlUrl}');
+      }
       update();
     } catch (error) {
       proSnackBar(

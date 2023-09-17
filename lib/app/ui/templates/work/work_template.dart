@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:portfolio_abimael/app/config_app.dart';
 import 'package:portfolio_abimael/app/data/data.dart';
+import 'package:portfolio_abimael/app/helpers/helpers.dart';
 
 import '../../../controllers/controllers.dart';
 
@@ -62,55 +63,75 @@ class WorkTemplate extends GetView<WorkController> {
                   itemCount: controller.projectList.length,
                   itemBuilder: (context, index) {
                     final project = controller.projectList[index];
-                    final height = index == controller.projectList.length - 1
-                        ? 300.0
-                        : 500.0;
-                    final width = index == controller.projectList.length - 1
-                        ? 500.0
-                        : 300.0;
+                    final height = project.isMobileProject ? 500.0 : 300.0;
+                    final width = project.isMobileProject ? 300.0 : 500.0;
 
-                    return ProContainer(
-                      backgroundColor: ProColors.graySoft,
-                      child: Padding(
-                        padding: const EdgeInsets.all(ProSpaces.proSpaces16),
-                        child: Column(
-                          children: [
-                            Text(
-                              project.projectName,
-                              style: ProTextStyles.bold22,
-                              textAlign: TextAlign.justify,
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  top: ProSpaces.proSpaces10),
-                              child: ProCarousel(
-                                autoPlay: false,
-                                height: height,
-                                items: project.fileImage.map((sufixUrlImage) {
-                                  final urlImage =
-                                      "${ConfigApp.storgeUrlPrefix}${project.urlSufix}/$sufixUrlImage";
-                                  return InkWell(
-                                    child: IgnorePointer(
-                                      child: ProImageNetworkWeb(
-                                        height: height,
-                                        width: width,
-                                        imageUrl: urlImage,
-                                      ),
-                                    ),
-                                    onTap: () {
-                                      _zoomImage(
-                                        context,
-                                        urlImage,
-                                        project,
+                    return Stack(
+                      children: [
+                        ProContainer(
+                          backgroundColor: ProColors.graySoft,
+                          child: Padding(
+                            padding:
+                                const EdgeInsets.all(ProSpaces.proSpaces16),
+                            child: Column(
+                              children: [
+                                Text(
+                                  project.projectName,
+                                  style: ProTextStyles.bold22,
+                                  textAlign: TextAlign.justify,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: ProSpaces.proSpaces10),
+                                  child: ProCarousel(
+                                    autoPlay: false,
+                                    height: height,
+                                    items:
+                                        project.fileImage.map((sufixUrlImage) {
+                                      final urlImage =
+                                          "${ConfigApp.storgeUrlPrefix}${project.urlSufix}/$sufixUrlImage";
+                                      return InkWell(
+                                        child: IgnorePointer(
+                                          child: ProImageNetworkWeb(
+                                            height: height,
+                                            width: width,
+                                            imageUrl: urlImage,
+                                          ),
+                                        ),
+                                        onTap: () {
+                                          if (project.urlDemo.isNotEmpty) {
+                                            openUrlHelper(project.urlDemo);
+                                          } else {
+                                            _zoomImage(
+                                              context: context,
+                                              urlImage: urlImage,
+                                              project: project,
+                                            );
+                                          }
+                                        },
                                       );
-                                    },
-                                  );
-                                }).toList(),
+                                    }).toList(),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        if (project.urlGit.isNotEmpty)
+                          Align(
+                            alignment: Alignment.bottomRight,
+                            child: IconButton(
+                              onPressed: () => openUrlHelper(
+                                project.urlGit,
+                              ),
+                              icon: const Icon(
+                                ProIcons.github,
+                                color: ProColors.orangeMedium,
+                                size: 44,
                               ),
                             ),
-                          ],
-                        ),
-                      ),
+                          )
+                      ],
                     );
                   },
                 ),
@@ -120,7 +141,11 @@ class WorkTemplate extends GetView<WorkController> {
         });
   }
 
-  void _zoomImage(BuildContext context, urlImage, ProjectModel project) {
+  void _zoomImage({
+    required BuildContext context,
+    required urlImage,
+    required ProjectModel project,
+  }) {
     final closeButton = TextButton(
       child: Text(
         'label_close'.tr,
@@ -129,8 +154,15 @@ class WorkTemplate extends GetView<WorkController> {
       onPressed: Get.back,
     );
 
-    final height = MediaQuery.sizeOf(context).height * 0.7;
-    final width = MediaQuery.sizeOf(context).height * 0.4;
+    final heightFull = MediaQuery.sizeOf(context).height;
+
+    final widthFull = MediaQuery.sizeOf(context).width;
+
+    final height =
+        project.isMobileProject ? heightFull * 0.7 : heightFull * 0.6;
+
+    final width = project.isMobileProject ? heightFull * 0.4 : widthFull;
+
     final alert = AlertDialog(
       title: Text(project.projectName),
       content: SizedBox(
