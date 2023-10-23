@@ -91,7 +91,7 @@ class WorkTemplate extends GetView<WorkController> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Flexible(
-                                        flex: 2,
+                                        flex: project.isMobileProject ? 3 : 2,
                                         child: ProCarousel(
                                           autoPlay: false,
                                           height: height,
@@ -125,18 +125,26 @@ class WorkTemplate extends GetView<WorkController> {
                                         ),
                                       ),
                                       Flexible(
-                                          flex: 1,
+                                          flex: project.isMobileProject ? 2 : 1,
                                           child: Padding(
                                             padding: const EdgeInsets.only(
                                               left: ProSpaces.proSpaces16,
                                             ),
-                                            child: Text(
-                                              project.description,
-                                              textAlign: TextAlign.justify,
-                                              style: ProTextStyles.regular16
-                                                  .copyWith(
-                                                color: ProColors.white,
-                                              ),
+                                            child: ListView(
+                                              shrinkWrap: true,
+                                              physics:
+                                                  const NeverScrollableScrollPhysics(),
+                                              children: [
+                                                Text(
+                                                  project.description,
+                                                  textAlign: TextAlign.justify,
+                                                  style: ProTextStyles.regular16
+                                                      .copyWith(
+                                                    color: ProColors.white,
+                                                  ),
+                                                ),
+                                                _contentList(project.contents)
+                                              ],
                                             ),
                                           ))
                                     ],
@@ -156,7 +164,7 @@ class WorkTemplate extends GetView<WorkController> {
                               icon: const Icon(
                                 ProIcons.github,
                                 color: ProColors.orangeMedium,
-                                size: 44,
+                                size: 32,
                               ),
                             ),
                           )
@@ -169,6 +177,28 @@ class WorkTemplate extends GetView<WorkController> {
           );
         });
   }
+
+  Widget _contentList(List<String> contents) => ListView.builder(
+        shrinkWrap: true,
+        itemCount: contents.length,
+        itemBuilder: (context, index) {
+          final content = contents[index];
+
+          return ListTile(
+            contentPadding: EdgeInsets.zero,
+            leading: const Icon(
+              Icons.check,
+              color: ProColors.orangeMedium,
+            ),
+            title: Text(
+              content,
+              style: ProTextStyles.regular16.copyWith(
+                color: ProColors.white,
+              ),
+            ),
+          );
+        },
+      );
 
   void _zoomImage({
     required BuildContext context,
