@@ -22,7 +22,7 @@ class SideBar extends StatelessWidget {
             padding: const EdgeInsets.only(top: 110),
             child: ProContainer(
               height: 700,
-              backgroundColor: ProColors.white,
+              backgroundColor: ProColors.blackLight,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                         horizontal: ProSpaces.proSpaces24)
@@ -62,7 +62,7 @@ class SideBar extends StatelessWidget {
                     ),
                     ProContainer(
                       height: 300,
-                      backgroundColor: ProColors.graySoft,
+                      backgroundColor: ProColors.blackMedium,
                       child: Padding(
                         padding: const EdgeInsets.all(ProSpaces.proSpaces30),
                         child: Column(
@@ -105,7 +105,7 @@ class SideBar extends StatelessWidget {
       child: SizedBox(
         width: 60,
         child: ProContainer(
-          backgroundColor: ProColors.graySoft,
+          backgroundColor: ProColors.black,
           height: 60,
           child: Icon(
             icon,
@@ -148,8 +148,8 @@ class SideBar extends StatelessWidget {
                 ),
                 child: Text(
                   subTitle,
-                  style: ProTextStyles.semiBold14
-                      .copyWith(fontWeight: FontWeight.w600),
+                  style: ProTextStyles.semiBold14.copyWith(
+                      fontWeight: FontWeight.w600, color: ProColors.white),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),

@@ -11,7 +11,7 @@ class ProfileInformations extends StatelessWidget {
       children: [
         Text(
           'Abimael Andrade',
-          style: ProTextStyles.bold28,
+          style: ProTextStyles.bold28.copyWith(color: ProColors.white),
           textAlign: TextAlign.center,
           overflow: TextOverflow.ellipsis,
         ),

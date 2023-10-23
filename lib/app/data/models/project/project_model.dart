@@ -5,6 +5,7 @@ class ProjectModel {
   final List<String> fileImage;
   final String urlDemo;
   final String urlGit;
+  final String description;
   ProjectModel({
     required this.projectName,
     required this.urlSufix,
@@ -12,6 +13,7 @@ class ProjectModel {
     required this.fileImage,
     required this.urlDemo,
     required this.urlGit,
+    required this.description,
   });
 
   Map<String, dynamic> toMap() {
@@ -23,6 +25,7 @@ class ProjectModel {
     result.addAll({'fileImage': fileImage});
     result.addAll({'urlDemo': urlDemo});
     result.addAll({'urlDemo': urlGit});
+    result.addAll({'description': description});
 
     return result;
   }
@@ -35,6 +38,7 @@ class ProjectModel {
       fileImage: List<String>.from(map['fileImage']),
       urlDemo: map['urlDemo'] ?? '',
       urlGit: map['urlGit'] ?? '',
+      description: map['description'] ?? '',
     );
   }
 }

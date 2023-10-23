@@ -23,7 +23,7 @@ class HomeTemplate extends GetView<HomeController> {
 
       return Scaffold(
         key: _key,
-        backgroundColor: ProColors.graySoft,
+        backgroundColor: ProColors.black,
         drawerEnableOpenDragGesture: true,
         drawer: isMobile
             ? Padding(
@@ -96,8 +96,9 @@ class HomeTemplate extends GetView<HomeController> {
     return Padding(
       padding: const EdgeInsets.only(left: 20),
       child: ProContainer(
+        borderRadius: ProRadius.proRadiusAll16,
         height: 700,
-        backgroundColor: ProColors.white,
+        backgroundColor: ProColors.blackLight,
         child: Padding(
           padding: EdgeInsets.all(
             MediaQuery.sizeOf(context).width * 0.02,

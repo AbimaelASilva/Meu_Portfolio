@@ -19,7 +19,7 @@ class TopMenuOptions extends StatelessWidget {
     return LimitedBox(
       maxWidth: MediaQuery.sizeOf(context).width * 0.4,
       child: ProContainer(
-        backgroundColor: ProColors.graySoft,
+        backgroundColor: ProColors.blackLight,
         borderRadius: ProRadius.proRadiusAll20,
         elevation: 10,
         child: Padding(

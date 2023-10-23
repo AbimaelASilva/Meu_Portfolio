@@ -8,7 +8,7 @@ class ProContainer extends StatelessWidget {
     this.borderWidth = 1.0,
     this.borderColor = Colors.transparent,
     this.backgroundColor,
-    this.borderRadius = ProRadius.proRadiusAll16,
+    this.borderRadius = ProRadius.proRadiusAll12,
     this.paddingAllChild = 0,
     this.height,
     this.elevation = 0,
@@ -30,9 +30,8 @@ class ProContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      
         elevation: elevation,
-        borderRadius: borderRadius,
+        borderRadius: const BorderRadius.all(Radius.circular(100)),
         child: Container(
           constraints: constraints,
           height: height,

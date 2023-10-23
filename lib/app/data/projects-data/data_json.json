@@ -1,10 +1,30 @@
 [
   {
+    "projectName": "IdoLink",
+    "urlSufix": "ido",
+    "isMobileProject": true,
+    "isFront": true,
+    "urlGit": "https://idolink.com/",
+    "description":"No projeto trabalhei com.",
+    "contents":["Publicação nas lojas(Google, Apple)","Versionamento de código","Criação de Pacotes(packages) próprios","Code Review","Carrinho de compra","Integração de pagamentos","Websoket","Noticações (Local Notications e OneSignal)","Consumo de API REST","Figma","Jira"],
+    "fileImage": [
+      "login.png",
+      "home.png",
+      "orders.png",
+      "scheduling.png",
+      "tools.png",
+      "menu.png"
+    ]
+  },
+  {
     "projectName": "Tedera LLC",
     "urlSufix": "tedera",
     "isMobileProject": false,
+    "isFront": true,
     "urlDemo": "https://abimaelasilva.github.io/tedera/#/",
     "urlGit": "https://github.com/AbimaelASilva/tedera",
+    "description":"Página web app criada para teste de um freelancer Tedera. Nela foi requerida uma animação para quando clicasse no produto ele fosse animado para a área do cart",
+    "contents":["Animação","Icons personalizados"],
     "fileImage": [
       "tedera_1.jpg",
       "tedera_1.jpg"
@@ -16,7 +36,10 @@
     "projectName": "Oficina FTC 2023",
     "urlSufix": "oficina_ftc_2023",
     "isMobileProject": true,
+    "isFront": true,
     "urlGit": "https://github.com/AbimaelASilva/oficina_unex_2023",
+    "description":"App criado para apresentar O flutter em uma oficina da Unex ",
+    "contents":["Player de audio funcioal, "],
     "fileImage": [
       "home.png",
       "player_1.png",
@@ -27,7 +50,10 @@
     "projectName": "Preço Bom",
     "urlSufix": "preco_bom",
     "isMobileProject": true,
+    "isFront": true,
     "urlGit": "",
+    "description":"App criado para um projeto pessoal que atualmente esta em standby. ",
+    "contents":[],
     "fileImage": [
       "home.png",
       "perfil.png",
@@ -40,7 +66,10 @@
     "projectName": "Cadê meu Pet",
     "urlSufix": "cade_meu_pet",
     "isMobileProject": true,
+    "isFront": true,
     "urlGit": "https://github.com/AbimaelASilva/cade_meu_pet",
+    "description":"App criado para apresentar como requisito de uma das diciplinas da Unex ",
+    "contents":[ ],
     "fileImage": [
       "login.png",
       "home.png",  
@@ -56,7 +85,10 @@
     "projectName": "Força de Venda",
     "urlSufix": "forca_venda",
     "isMobileProject": true,
+    "isFront": true,
     "urlGit": "",
+    "description":"App que permite cadastrar, editar, exlcuir, vender produtos de uma determinada loja. É possível também gerar o pedido em PDF e imprimir",
+    "contents":[ ],
     "fileImage": [
       "home.png",
       "impressao.png",
@@ -74,7 +106,10 @@
     "projectName": "Oficina FTC 2022",
     "urlSufix": "oficina_ftc_2022",
     "isMobileProject": true,
+    "isFront": true,
     "urlGit": "",
+    "description":"App criado para apresentar O flutter em uma oficina da Unex ",
+    "contents":[ ],
     "fileImage": [
       "perfil.png"
     ]
@@ -84,7 +119,10 @@
     "projectName": "Sport",
     "urlSufix": "sport",
     "isMobileProject": true,
+    "isFront": true,
     "urlGit": "",
+    "description":"App que possibilidata cadastrar atletas de um grupo de esporte, sortear equipes buscando o máximo de equilíbrios entre as equipes sorteadas. Gerenciar cartões, pagamentos, etc...",
+    "contents":[ ],
     "fileImage": [
       "home.png",
       "login.png",
@@ -99,7 +137,10 @@
     "projectName": "ToDo",
     "urlSufix": "todo",
     "isMobileProject": true,
+    "isFront": true,
     "urlGit": "https://github.com/AbimaelASilva/todo",
+    "description":"App que tem as Funções básicas de um ToDo usado para fins de didátida de ensino.",
+    "contents":[ ],
     "fileImage": [
       "todo.png"
     ]
@@ -108,11 +149,26 @@
     "projectName": "Way Web",
     "urlSufix": "way_web",
     "isMobileProject": false,
+    "isFront": true,
     "urlGit": "https://github.com/AbimaelASilva/waychef-joao",
+    "description":"Página web app criada para um amigo, onde se tem algums funcionalidades de CRUD.",
+    "contents":[ ],
     "fileImage": [
       "home.jpg",
       "cadastro_produto.jpg"
 
+    ]
+  } , 
+  {
+    "projectName": "Curso Java+SpringBoot - RocketSeat",
+    "urlSufix": "java_spring_rocket",
+    "isMobileProject": false,
+    "isFront": false,
+    "urlGit": "https://github.com/AbimaelASilva/backend-todo-java",
+    "description":"Construção do back-end de uma aplicação de To-Do List.",
+    "contents":[ ],
+    "fileImage": [
+      "certificado.jpeg"
     ]
   }  
 ]

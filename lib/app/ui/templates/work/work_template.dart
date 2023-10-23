@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:portfolio_abimael/app/config_app.dart';
-import 'package:portfolio_abimael/app/data/data.dart';
-import 'package:portfolio_abimael/app/helpers/helpers.dart';
+
+import '../../../config_app.dart';
+import '../../../data/data.dart';
+import '../../../helpers/helpers.dart';
 
 import '../../../controllers/controllers.dart';
 
@@ -23,15 +24,14 @@ class WorkTemplate extends GetView<WorkController> {
     return GetBuilder<WorkController>(
         init: controller,
         builder: (_) {
-          return ProContainer(
+          return SizedBox(
             height: 700,
-            backgroundColor: ProColors.white,
             child: ListView(
               shrinkWrap: true,
               children: [
                 Text(
                   'label_work'.tr.toUpperCase(),
-                  style: ProTextStyles.bold40,
+                  style: ProTextStyles.bold40.copyWith(color: ProColors.white),
                   textAlign: TextAlign.start,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -42,18 +42,19 @@ class WorkTemplate extends GetView<WorkController> {
                   ),
                   child: Text(
                     'message_about_me'.tr,
-                    style: ProTextStyles.regular16,
+                    style: ProTextStyles.regular16
+                        .copyWith(color: ProColors.white),
                     textAlign: TextAlign.justify,
 
                     //  overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                Text(
-                  'label_what_ive_already_done'.tr,
-                  style: ProTextStyles.bold32,
-                  textAlign: TextAlign.start,
-                  overflow: TextOverflow.ellipsis,
-                ),
+                // Text(
+                //   'label_what_ive_already_done'.tr,
+                //   style: ProTextStyles.bold32,
+                //   textAlign: TextAlign.start,
+                //   overflow: TextOverflow.ellipsis,
+                // ),
                 ListView.separated(
                   separatorBuilder: (context, index) => const SizedBox(
                     height: ProSpaces.proSpaces8,
@@ -69,7 +70,7 @@ class WorkTemplate extends GetView<WorkController> {
                     return Stack(
                       children: [
                         ProContainer(
-                          backgroundColor: ProColors.graySoft,
+                          backgroundColor: ProColors.blackMedium,
                           child: Padding(
                             padding:
                                 const EdgeInsets.all(ProSpaces.proSpaces16),
@@ -77,40 +78,68 @@ class WorkTemplate extends GetView<WorkController> {
                               children: [
                                 Text(
                                   project.projectName,
-                                  style: ProTextStyles.bold22,
+                                  style: ProTextStyles.bold22.copyWith(
+                                    color: ProColors.white,
+                                  ),
                                   textAlign: TextAlign.justify,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(
                                       top: ProSpaces.proSpaces10),
-                                  child: ProCarousel(
-                                    autoPlay: false,
-                                    height: height,
-                                    items:
-                                        project.fileImage.map((sufixUrlImage) {
-                                      final urlImage =
-                                          "${ConfigApp.storgeUrlPrefix}${project.urlSufix}/$sufixUrlImage";
-                                      return InkWell(
-                                        child: IgnorePointer(
-                                          child: ProImageNetworkWeb(
-                                            height: height,
-                                            width: width,
-                                            imageUrl: urlImage,
-                                          ),
-                                        ),
-                                        onTap: () {
-                                          if (project.urlDemo.isNotEmpty) {
-                                            openUrlHelper(project.urlDemo);
-                                          } else {
-                                            _zoomImage(
-                                              context: context,
-                                              urlImage: urlImage,
-                                              project: project,
+                                  child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Flexible(
+                                        flex: 2,
+                                        child: ProCarousel(
+                                          autoPlay: false,
+                                          height: height,
+                                          items: project.fileImage
+                                              .map((sufixUrlImage) {
+                                            final urlImage =
+                                                "${ConfigApp.storgeUrlPrefix}${project.urlSufix}/$sufixUrlImage";
+                                            return InkWell(
+                                              child: IgnorePointer(
+                                                child: ProImageNetworkWeb(
+                                                  height: height,
+                                                  width: width,
+                                                  imageUrl: urlImage,
+                                                ),
+                                              ),
+                                              onTap: () {
+                                                if (project
+                                                    .urlDemo.isNotEmpty) {
+                                                  openUrlHelper(
+                                                      project.urlDemo);
+                                                } else {
+                                                  _zoomImage(
+                                                    context: context,
+                                                    urlImage: urlImage,
+                                                    project: project,
+                                                  );
+                                                }
+                                              },
                                             );
-                                          }
-                                        },
-                                      );
-                                    }).toList(),
+                                          }).toList(),
+                                        ),
+                                      ),
+                                      Flexible(
+                                          flex: 1,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                              left: ProSpaces.proSpaces16,
+                                            ),
+                                            child: Text(
+                                              project.description,
+                                              textAlign: TextAlign.justify,
+                                              style: ProTextStyles.regular16
+                                                  .copyWith(
+                                                color: ProColors.white,
+                                              ),
+                                            ),
+                                          ))
+                                    ],
                                   ),
                                 ),
                               ],

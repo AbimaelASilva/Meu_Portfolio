@@ -7,7 +7,7 @@ final Map<String, String> ptBrTranslate = {
   "label_work": "Trabalhos",
   "label_contact": "Contato",
   "message_about_me":
-      "Olá! Estou muito feliz em recebê-lo em meu portfólio. Eu sou um apaixonado e versátildesenvolvedor full-stack com grande interesse em explorar as mais recentes tecnologias de ponta. Minha jornada no mundo do desenvolvimento web tem sido simplesmente emocionante e Eu me esforço constantemente para aprimorar minhas habilidades e abraçar as tendências emergentes do setor.",
+      "Olá! Fique à vontade para navegar aqui nesta aba e ver alguns prints dos meus trabalhos.",
   "label_what_i_do": "O que eu faço!",
   "label_app_development": "Desenvolvimento de aplicativos",
   "message_app_development":
