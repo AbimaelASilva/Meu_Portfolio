@@ -3,6 +3,7 @@ class ProjectModel {
   final String urlSufix;
   final bool isMobileProject;
   final List<String> fileImage;
+  final List<String> contents;
   final String urlDemo;
   final String urlGit;
   final String description;
@@ -11,6 +12,7 @@ class ProjectModel {
     required this.urlSufix,
     required this.isMobileProject,
     required this.fileImage,
+    required this.contents,
     required this.urlDemo,
     required this.urlGit,
     required this.description,
@@ -35,7 +37,8 @@ class ProjectModel {
       projectName: map['projectName'] ?? '',
       urlSufix: map['urlSufix'] ?? '',
       isMobileProject: map['isMobileProject'] ?? true,
-      fileImage: List<String>.from(map['fileImage']),
+      fileImage: <String>[...map['fileImage'] ?? []].map((e) => e).toList(),
+      contents: <String>[...map['contents'] ?? []].map((e) => e).toList(),
       urlDemo: map['urlDemo'] ?? '',
       urlGit: map['urlGit'] ?? '',
       description: map['description'] ?? '',
